@@ -1,0 +1,8 @@
+package com.mybank;
+
+public class AccountResponseDto {
+	
+	priavet Account account;
+	
+
+}

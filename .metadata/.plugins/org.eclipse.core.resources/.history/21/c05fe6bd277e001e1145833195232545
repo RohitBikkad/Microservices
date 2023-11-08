@@ -1,0 +1,8 @@
+package com.mybank;
+
+public class LoanResponseDto {
+	
+	private Loan loan;
+	
+
+}

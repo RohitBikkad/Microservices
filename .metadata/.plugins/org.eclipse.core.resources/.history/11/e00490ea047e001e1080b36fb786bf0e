@@ -1,0 +1,11 @@
+package com.mybank;
+
+
+public class AccountResponseDto {
+	
+	private Account account;
+	
+	
+	
+
+}

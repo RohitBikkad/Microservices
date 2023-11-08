@@ -1,0 +1,24 @@
+package com.mybank;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/loan")
+public class LoanController {
+	
+	@Autowired
+	private LoanRepository loanRepository;
+
+	
+	@GetMapping("/{accountNumber}")
+	public LoanResponseDto getLoan(@PathVariable long accountNumber) {
+		Loan loan = loanRepository.findByAccountNumber(accountNumber).get();
+		LoanResponseDto loanResponseDto = new LoanResponseDto();
+		loanResponseDto.setLoan(loan);
+		return loanResponseDto;
+	}
+}

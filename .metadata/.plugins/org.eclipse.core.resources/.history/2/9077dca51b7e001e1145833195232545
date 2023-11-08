@@ -1,0 +1,13 @@
+package com.mybank;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+@FeignClient(name="accounts-service")
+public interface AccountServiceClient {
+	
+	@GetMapping("/{accountNumber}")
+	AccountResponseDto accounts(@PathVariable("accountNumber") long accountNumber);
+
+}

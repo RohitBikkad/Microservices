@@ -1,0 +1,16 @@
+package com.mybank;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class CardService {
+	
+	@Autowired
+	private CardRepository cardRepository;
+	
+	public Card getCardByAccountNumber(long accountNumber) {
+		
+		return cardRepository.findByAccountNumber(accountNumber);
+	}
+}

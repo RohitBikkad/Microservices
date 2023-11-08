@@ -1,0 +1,21 @@
+package com.mybank;
+
+public class AccountResponseDto {
+	
+	private Account account;
+
+	public AccountResponseDto() {
+		super();
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+	
+	
+
+}

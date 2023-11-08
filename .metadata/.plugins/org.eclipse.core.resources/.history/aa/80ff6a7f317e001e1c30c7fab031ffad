@@ -1,0 +1,11 @@
+package com.mybank;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.PathVariable;
+
+@FeignClient(name = "loan-service")
+public interface LoanApiClient {
+	
+	public LoanResponseDto getLoan(PathVariable long accountNumber);
+
+}
